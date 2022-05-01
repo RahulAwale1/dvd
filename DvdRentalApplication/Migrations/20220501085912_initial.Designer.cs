@@ -12,38 +12,17 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DvdRentalApplication.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20220418015924_Register1")]
-    partial class Register1
+    [Migration("20220501085912_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.3")
+                .HasAnnotation("ProductVersion", "6.0.4")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
-
-            modelBuilder.Entity("DvdRentalApplication.Models.UserLoginModel", b =>
-                {
-                    b.Property<int?>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"), 1L, 1);
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Username")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("UserLoginModel");
-                });
 
             modelBuilder.Entity("DvdRentalApplication.Models.UserRegisterModel", b =>
                 {

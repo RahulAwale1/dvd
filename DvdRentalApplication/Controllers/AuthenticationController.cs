@@ -81,7 +81,7 @@ namespace DvdRentalApplication.Controllers
             return RedirectToAction("UnauthorizedAccess");
         }
 
-  
+
 
         // GET: Authentication/RegisterUser
         public IActionResult Register()
@@ -91,7 +91,7 @@ namespace DvdRentalApplication.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Register([FromBody] UserRegisterModel model)
+        public async Task<IActionResult> Register([FromForm] UserRegisterModel model)
         {
             var userExists = await _userManager.FindByNameAsync(model.Username);
             if (userExists != null)

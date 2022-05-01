@@ -6,7 +6,7 @@ using DvdRentalApplication.Models.ViewModels;
 
 namespace DvdRentalApplication.DBContext
 {
-    public class ApplicationDBContext: IdentityDbContext<IdentityUser>
+    public class ApplicationDBContext : IdentityDbContext<IdentityUser>
     {
         public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options) : base(options)
         {
@@ -15,8 +15,8 @@ namespace DvdRentalApplication.DBContext
         {
             base.OnModelCreating(builder);
         }
-        public DbSet<DvdRentalApplication.Models.UserLoginModel> UserLoginModel { get; set; }
         public DbSet<DvdRentalApplication.Models.UserRegisterModel> UserRegisterModel { get; set; }
         public DbSet<DvdRentalApplication.Models.ViewModels.UserDetailsViewModel> UserDetailsViewModel { get; set; }
+
     }
 }
